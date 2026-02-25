@@ -179,20 +179,31 @@ function toggleSortOrder() {
               v-model="search"
               type="search"
               placeholder="Search notes..."
-              class="w-full pl-12 pr-5 py-3.5 bg-gray-50/70 dark:bg-gray-800/50 border border-gray-300/80 dark:border-gray-600/70 rounded-xl text-sm placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/40 focus:border-indigo-500/50 transition-all duration-200"
+              class="w-full pl-12 pr-5 py-3.5 bg-gray-50/70 dark:bg-gray-800/50 border border-gray-300/80 dark:border-gray-600/70 rounded-xl text-sm text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/40 focus:border-indigo-500/50 transition-all duration-200"
             />
           </div>
 
           <!-- Sort + New -->
           <div class="flex items-center gap-3 flex-wrap">
-            <select
-              v-model="sortBy"
-              class="min-w-[150px] px-4 py-3.5 bg-gray-50/70 dark:bg-gray-800/50 border border-gray-300/80 dark:border-gray-600/70 rounded-xl text-sm text-gray-700 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-500/40 appearance-none cursor-pointer"
-            >
-              <option value="createdAt">Created date</option>
-              <option value="updatedAt">Last updated</option>
-              <option value="title">Title</option>
-            </select>
+            <div class="relative">
+              <select
+                v-model="sortBy"
+                class="min-w-[150px] pl-4 pr-10 py-3.5 bg-gray-50/70 dark:bg-gray-800/50 border border-gray-300/80 dark:border-gray-600/70 rounded-xl text-sm text-gray-700 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-500/40 appearance-none cursor-pointer"
+              >
+                <option value="createdAt">Created date</option>
+                <option value="updatedAt">Last updated</option>
+                <option value="title">Title</option>
+              </select>
+              <svg
+                class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 dark:text-gray-500"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
 
             <button
               @click="toggleSortOrder"
