@@ -269,9 +269,7 @@ function toggleSortOrder() {
         v-if="notesStore.loading"
         class="flex justify-center items-center min-h-[50vh]"
       >
-        <div
-          class="w-14 h-14 border-4 border-indigo-100 dark:border-indigo-950/40 border-t-indigo-600 rounded-full animate-spin"
-        ></div>
+        <div class="loader"></div>
       </div>
 
       <div v-else-if="notesStore.error" class="text-center py-24">
@@ -376,3 +374,18 @@ function toggleSortOrder() {
     />
   </div>
 </template>
+
+<style scoped>
+@keyframes loader-spin {
+  to { transform: rotate(360deg); }
+}
+
+.loader {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  border: 4px solid #e0e7ff;
+  border-top-color: #4f46e5;
+  animation: loader-spin 0.8s linear infinite;
+}
+</style>
