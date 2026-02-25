@@ -196,7 +196,7 @@ function toggleSortOrder() {
 
             <button
               @click="toggleSortOrder"
-              class="flex items-center justify-center gap-2 min-w-[130px] px-4 py-3.5 bg-gray-50/70 dark:bg-gray-800/50 border border-gray-300/80 dark:border-gray-600/70 rounded-xl text-sm hover:bg-gray-100/80 dark:hover:bg-gray-700/60 transition-all"
+              class="flex items-center justify-center gap-2 min-w-[130px] px-4 py-3.5 bg-gray-50/70 dark:bg-gray-800/50 border border-gray-300/80 dark:border-gray-600/70 rounded-xl text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100/80 dark:hover:bg-gray-700/60 transition-all"
               :title="sortBy === 'title' ? (sortOrder === 'asc' ? 'A → Z' : 'Z → A') : (sortOrder === 'desc' ? 'Newest first' : 'Oldest first')"
             >
               <svg
